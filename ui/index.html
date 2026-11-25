@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE 5G trace</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Pegatron FM160</p>
+      <h1>UE status and diagnostic trace</h1>
+    </div>
+    <button id="refresh" type="button">Refresh status</button>
+    <button id="read-dongle" type="button">Read dongle logs</button>
+  </header>
+  <p id="banner" class="banner" hidden></p>
+
+  <section id="status" class="status" aria-live="polite"></section>
+
+  <section class="layout">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Captures</h2>
+      </div>
+      <div id="captures" class="captures"></div>
+      <h2 class="sub">Table rows</h2>
+      <div id="coverage" class="timeline"></div>
+      <h2 class="sub">Timeline</h2>
+      <div id="timeline" class="timeline"></div>
+    </div>
+    <div class="panel log-panel">
+      <div class="panel-head">
+        <h2>Diagnostic log</h2>
+        <p id="log-meta" class="meta"></p>
+      </div>
+      <div class="tools">
+        <div id="filters" class="filters" role="tablist"></div>
+        <input id="search" type="search" placeholder="Search RRC, MAC, UCI, RLC" autocomplete="off">
+      </div>
+      <div id="log" class="log"></div>
+      <div class="pager">
+        <button id="prev" type="button">Previous</button>
+        <span id="page"></span>
+        <button id="next" type="button">Next</button>
+      </div>
+    </div>
+  </section>
+  <script src="/app.js"></script>
+</body>
+</html>
